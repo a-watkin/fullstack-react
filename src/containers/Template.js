@@ -14,6 +14,7 @@ class Template extends Component {
           <header>
             <h1>TicTacTuring</h1>
             <RaisedButton
+              // text that appears in the button
               label={'Test Button'}
               primary={true}
               onTouchTap={()=>{console.log('hello, I work')}}

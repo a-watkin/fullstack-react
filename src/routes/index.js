@@ -14,6 +14,7 @@ const createRoutes = () => {
         component={Home}
       />
       <Route
+        // the actual URL
         path={'/profile'}
         component={Profile}
       />
