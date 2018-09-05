@@ -5,11 +5,14 @@ import Divider from 'material-ui/Divider'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import Menu from 'material-ui/svg-icons/navigation/menu'
 import {Link} from 'react-router'
+import {NavToggleButton} from '../styled/NavDrawer'
+
 
 class NavDrawer extends Component {
 
     state = {
-        open: true
+        open: true,
+        wdith: 250
     }
     
 
@@ -24,16 +27,16 @@ class NavDrawer extends Component {
     render() {
       return (
         <div>
-          <FloatingActionButton
-            onTouchTap={this.toggle}
-          >
-            <Menu/>
-          </FloatingActionButton>
-
-
-          <Drawer
+            
+        <NavToggleButton 
+            toggle={this.toggle}
+            width={this.state.width}
+        />
+        
+        <Drawer
             open={this.state.open}
-          >
+            width={this.state.width}
+        >
 
           <div
             
