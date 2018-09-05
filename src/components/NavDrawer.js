@@ -6,13 +6,25 @@ import FloatingActionButton from 'material-ui/FloatingActionButton'
 import Menu from 'material-ui/svg-icons/navigation/menu'
 
 class NavDrawer extends Component {
+
+    state = {
+        open: false
+    }
+
     render() {
       return (
         <div>
           <FloatingActionButton>
             <Menu/>
           </FloatingActionButton>
-          <Drawer>
+
+
+          <Drawer
+          
+            open={this.state.open}
+          >
+
+
             <Divider/>
             <MenuItem
               primaryText={'Play'}
@@ -20,8 +32,12 @@ class NavDrawer extends Component {
             <MenuItem
               primaryText={'Profile'}
             />
+
+
           </Drawer>
         </div>
+
+        
       )
     }
 }
