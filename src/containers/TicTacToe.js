@@ -32,7 +32,8 @@ class TicTacToe extends Component {
     this.setState({
       size,
       rows,
-      unit
+      unit,
+      coordinates
     })
   }
 
