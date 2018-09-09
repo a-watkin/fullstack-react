@@ -35,7 +35,6 @@ class TicTacToe extends Component {
     let size = (height < width) ? height * .8 : width * .8
     let rows = this.state.rows
     let unit = size / rows
-
     let coordinates = []
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < rows; x++) {
@@ -51,15 +50,23 @@ class TicTacToe extends Component {
     })
   }
 
-  move = (marker, index) => {
-    console.log('move, made, ', marker, index)
+  // so it matters what order these arguments are in
+  move = (index, marker) => {
+    // console.log('move, made, ', marker, index)
+
     this.setState( (prevState, prop) => {
+
       let {gameState, yourTurn, gameOver, winner} = prevState
+      
+      // changes the turn
       yourTurn = !yourTurn
+
       // replace index with marker
       gameState.splice(index, 1, marker)
+
       let foundWin = this.winChecker(gameState)
-      if(foundWin) {
+
+      if (foundWin) {
         winner = gameState[foundWin[0]]
       }
       // if win found or no more blank squares
@@ -90,7 +97,11 @@ class TicTacToe extends Component {
       }
     })
     let aiMove = openSquares[this.random(0, openSquares.length)]
-    this.move(aiMove, otherMark)
+    
+    // ai waits one second before moving
+    setTimeout(() => {
+      this.move(aiMove, otherMark)
+    }, 1000)
   }
 
   random = (min, max) => {
@@ -103,9 +114,8 @@ class TicTacToe extends Component {
     let combos = this.combos
     return combos.find( (combo) => {
       let [a,b,c] = combo
-      return (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c])
+      return (gameState[a] === gameState[b] && gameState[a] === gameState[c] && gameState[a])
     })
-
   }
 
   turingTest = () => {
