@@ -4,6 +4,20 @@ import {Board, Squares} from '../styled/TicTacToe'
 
 class TicTacToe extends Component {
 
+  constructor(props) {
+    super(props)
+    this.combos = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ]
+  }
+
   state = {
     rows: 3,
     gameState: new Array(9).fill(false),
@@ -41,8 +55,31 @@ class TicTacToe extends Component {
     console.log('move, made, ', marker, index)
   }
 
-  makeAiMove = () => {
-    //placeholder
+  makeAiMove = (gameState) => {
+    let otherMark = this.state.otherMark
+    let openSquares = []
+    gameState.forEach( (square, index) => {
+      if(!square) {
+        openSquares.push(index)
+      }
+    })
+    let aiMove = openSquares[this.random(0, openSquares.length)]
+    this.move(aiMove, otherMark)
+  }
+
+  random = (min, max) => {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max-min)) + min
+  }
+
+  winChecker = (gameState) => {
+    let combos = this.combos
+    return combos.find( (combo) => {
+      let [a,b,c] = combo
+      return (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c])
+    })
+
   }
 
   turingTest = () => {
