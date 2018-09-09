@@ -53,6 +53,32 @@ class TicTacToe extends Component {
 
   move = (marker, index) => {
     console.log('move, made, ', marker, index)
+    this.setState( (prevState, prop) => {
+      let {gameState, yourTurn, gameOver, winner} = prevState
+      yourTurn = !yourTurn
+      // replace index with marker
+      gameState.splice(index, 1, marker)
+      let foundWin = this.winChecker(gameState)
+      if(foundWin) {
+        winner = gameState[foundWin[0]]
+      }
+      // if win found or no more blank squares
+      if (foundWin || !gameState.includes(false)) {
+        gameOver = true
+      }
+      // if it's not he players move and the game isn't over
+      // make the ai do a move
+      if (!yourTurn && !gameOver) {
+        this.makeAiMove(gameState)
+      }
+      return {
+        gameState,
+        yourTurn,
+        gameOver,
+        win: foundWin || false,
+        winner
+      }
+    })
   }
 
   makeAiMove = (gameState) => {
