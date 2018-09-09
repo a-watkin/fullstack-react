@@ -48,18 +48,18 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "konva": "^2.3.0",
+    "konva": "^1.3.0",
     "material-ui": "^0.16.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-konva": "^1.7.15",
+    "react-konva": "^1.1.1",
     "react-router": "^3.0.2",
     "react-tap-event-plugin": "^2.0.1",
-    "styled-components": "^3.4.5"
+    "styled-components": "^1.4.2"
   },
   "scripts": {
-    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/simple/v1/cjln8wqx0121u01016kle8y7c node scripts/start.js",
-    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/simple/v1/cjln8wqx0121u01016kle8y7c node scripts/build.js",
+    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/ciyn8rxsl3bs201324sbzf0hx node scripts/start.js",
+    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/ciyn8rxsl3bs201324sbzf0hx node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
