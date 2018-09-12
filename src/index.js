@@ -18,8 +18,13 @@ import {relayApi} from './config/endpoints'
 import auth from './utils/auth'
 
 
-const creatHeaders = () => {
-
+const createHeaders = () => {
+  let idToken = auth.getToken()
+  if (idToken) {
+    Authorization: `Bearer ${idToken}`
+  } else {
+    return {}
+  }
 }
 
 ReactDOM.render(
