@@ -7,9 +7,14 @@ import Relay from 'react-relay'
 import userRelay from 'react-router-relay'
 
 // for changing headers
-import {RelayNetworklayer, urlMiddleware} from 'react-relay-networklayer'
+import {
+  RelayNetworkLayer,
+  urlMiddleware,
+} from 'react-relay-network-layer';
+
 import {relayApi} from './config/endpoints'
 
+import auth from '../utils/auth'
 
 const creatHeaders = () => {
 

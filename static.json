@@ -1,4 +1,3 @@
-// prevents nginx from handling routing
 {
   "root": "build/",
   "clean_urls": false,
