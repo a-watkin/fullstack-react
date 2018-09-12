@@ -19,7 +19,6 @@ class AuthService {
         this.lock.on('authenticaed', this.authProcess.bind(this))
     
     
-    
         authProcess = (authResult) => {
             console.log(authResult)
         }

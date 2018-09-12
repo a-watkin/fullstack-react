@@ -14,7 +14,9 @@ import {
 
 import {relayApi} from './config/endpoints'
 
-import auth from '../utils/auth'
+
+import auth from './utils/auth'
+
 
 const creatHeaders = () => {
 
