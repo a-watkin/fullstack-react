@@ -236,7 +236,7 @@ auth0-lock@^11.9.1:
     trim "0.0.1"
     url-join "^1.1.0"
 
-"auth0-password-policies@github:auth0/auth0-password-policies#v1.0.1":
+auth0-password-policies@auth0/auth0-password-policies#v1.0.1:
   version "1.0.1"
   resolved "https://codeload.github.com/auth0/auth0-password-policies/tar.gz/0b3da9b369b122a8b294d496143abfd33311e6b2"
   dependencies:
@@ -957,6 +957,13 @@ babel-runtime@^6.0.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtim
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
+
+babel-runtime@^6.23.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.11.0"
 
 babel-template@^6.16.0, babel-template@^6.22.0:
   version "6.22.0"
@@ -2241,6 +2248,18 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   dependencies:
     bser "1.0.2"
 
+fbjs@0.8.17, fbjs@^0.8.9:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.18"
+
 fbjs@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.3.2.tgz#033a540595084b5de3509a405d06f1a2a8e5b9fb"
@@ -2262,18 +2281,6 @@ fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.5, fbjs@^0.8.6, fbjs@^0.8.7, fbjs@^0.8.8:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
-
-fbjs@^0.8.9:
-  version "0.8.17"
-  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
-  dependencies:
-    core-js "^1.0.0"
-    isomorphic-fetch "^2.1.1"
-    loose-envify "^1.0.0"
-    object-assign "^4.1.0"
-    promise "^7.1.1"
-    setimmediate "^1.0.5"
-    ua-parser-js "^0.7.18"
 
 figures@^1.3.5:
   version "1.7.0"
@@ -2833,6 +2840,12 @@ interpret@^1.0.0:
 invariant@^2.2.0, invariant@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
+  dependencies:
+    loose-envify "^1.0.0"
+
+invariant@^2.2.2:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
     loose-envify "^1.0.0"
 
@@ -3601,6 +3614,10 @@ lodash.uniq@^4.3.0:
 "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lodash@^4.17.4:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -4505,7 +4522,7 @@ promise@^7.0.3:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -4670,6 +4687,29 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-relay-network-layer@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-relay-network-layer/-/react-relay-network-layer-2.2.0.tgz#ae017422f718e5a562d7fff6b290a05fbb45d463"
+
+react-relay@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-1.6.2.tgz#2e48480390b327dbf28cb0d97420db64fae4bda6"
+  dependencies:
+    babel-runtime "^6.23.0"
+    fbjs "0.8.17"
+    prop-types "^15.5.8"
+    relay-runtime "1.6.2"
+
+react-router-relay@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/react-router-relay/-/react-router-relay-0.14.0.tgz#0120904651225505fd5d100f1ee6c5b79bb66e20"
+  dependencies:
+    babel-runtime "^6.23.0"
+    invariant "^2.2.2"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+    react-static-container "^1.0.1"
+
 react-router@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-3.0.2.tgz#5a19156678810e01d81901f9c0fef63284b8a514"
@@ -4679,6 +4719,10 @@ react-router@^3.0.2:
     invariant "^2.2.1"
     loose-envify "^1.2.0"
     warning "^3.0.0"
+
+react-static-container@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-static-container/-/react-static-container-1.0.2.tgz#30a4f7548860be1d55d5eb4c20645b835c2bdf34"
 
 react-tap-event-plugin@^2.0.1:
   version "2.0.1"
@@ -4839,6 +4883,10 @@ regenerator-runtime@^0.10.0:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.1.tgz#257f41961ce44558b18f7814af48c17559f9faeb"
 
+regenerator-runtime@^0.11.0:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+
 regenerator-runtime@^0.9.5:
   version "0.9.6"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.9.6.tgz#d33eb95d0d2001a4be39659707c51b0cb71ce029"
@@ -4887,6 +4935,13 @@ regjsparser@^0.1.4:
 relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+
+relay-runtime@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-1.6.2.tgz#5ecd43d92799e761454200b455dd1c0cb0259659"
+  dependencies:
+    babel-runtime "^6.23.0"
+    fbjs "0.8.17"
 
 renderkid@~2.0.0:
   version "2.0.0"
