@@ -15,7 +15,9 @@ class Template extends Component {
       <MuiThemeProvider>
         <div>
 
-          <NavDrawer/>
+          <NavDrawer
+            auth={this.props.route.auth}
+          />
 
           <Header>
             TicTacTuring

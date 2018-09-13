@@ -4,6 +4,7 @@ import Template from '../containers/Template'
 import TicTacToe from '../containers/TicTacToe'
 import Profile from '../containers/Profile'
 import Relay from 'react-relay'
+import auth from '../utils/auth'
 
 const ViewerQuieries = {
   viewer: () => Relay.QL`query {viewer}` 
@@ -16,6 +17,7 @@ const createRoutes = () => {
       component={Template}
       // to allow the route to query the graph db
       queries={ViewerQuieries}
+      auth={auth}
     >
       <IndexRoute
         component={TicTacToe}
