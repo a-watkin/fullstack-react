@@ -87,10 +87,9 @@ class Profile extends Component {
 // export default Profile
 
 
-export default Relay.createFragmentContainer(
+export default Relay.createContainer(
   Profile, {
     fragments: {
-      // query the graph, gets current user or null
       viewer: () => Relay.QL`
         fragment on Viewer {
           user {
