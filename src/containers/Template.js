@@ -4,6 +4,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import NavDrawer from '../components/NavDrawer'
 import {Header, Main} from '../styled/Template'
 
+import Relay from 'react-relay'
 
 injectTapEventPlugin()
 
@@ -35,4 +36,20 @@ class Template extends Component {
   }
 }
 
-export default Template
+// export default Template
+
+
+export default Relay.createFragmentContainer(
+  Template, {
+    fragments: {
+      // query the graph, gets current user or null
+      viewer: () => Relay.QL`
+        fragment on Viewer {
+          user {
+            id
+          }
+        }
+      `,
+    }
+  }
+)

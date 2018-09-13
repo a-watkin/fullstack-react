@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {Stage} from 'react-konva'
 import {Board, Squares} from '../styled/TicTacToe'
 
+import Relay from 'react-relay'
+
 class TicTacToe extends Component {
 
   constructor(props) {
@@ -165,4 +167,19 @@ class TicTacToe extends Component {
   }
 }
 
-export default TicTacToe
+// export default TicTacToe
+
+export default Relay.createFragmentContainer(
+  TicTacToe, {
+    fragments: {
+      // query the graph, gets current user or null
+      viewer: () => Relay.QL`
+        fragment on Viewer {
+          user {
+            id
+          }
+        }
+      `,
+    }
+  }
+)

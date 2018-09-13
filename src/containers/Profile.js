@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Container, Name, GameListHeader, GameList, GameRecord, Column, ColumnLabels} from '../styled/Profile'
 
+import Relay from 'react-relay'
+
 class Profile extends Component {
 
   static defaultProps = {
@@ -82,4 +84,20 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+// export default Profile
+
+
+export default Relay.createFragmentContainer(
+  Profile, {
+    fragments: {
+      // query the graph, gets current user or null
+      viewer: () => Relay.QL`
+        fragment on Viewer {
+          user {
+            id
+          }
+        }
+      `,
+    }
+  }
+)
