@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Router, browserHistory} from 'react-router'
+import {Router, browserHistory, applyRouterMiddleware} from 'react-router'
 import Routes from './routes'
 
 import Relay from 'react-relay'
@@ -27,8 +27,26 @@ const createHeaders = () => {
   }
 }
 
+Relay.injectNetworkLayer [
+  new RelayNetworkLayer([
+    urlMiddleware(
+      {url: (req) => relayApi,}
+    ),
+    next => req => {
+      req.headers = {
+        // all the original headers, then any new ones
+        ...req.headers,
+        ...createHeaders()
+      }
+      return next(req)
+    },
+  ],{disableBatchQuery: true})
+]
+
 ReactDOM.render(
   <Router
+    environment={Relay.Store}
+    render={applyRouterMiddleware(userRelay)}
     history={browserHistory}
     routes={Routes}
   />,
