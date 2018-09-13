@@ -15,16 +15,16 @@ const createRoutes = () => {
       path='/'
       component={Template}
       // to allow the route to query the graph db
-      query={ViewerQuieries}
+      queries={ViewerQuieries}
     >
       <IndexRoute
         component={TicTacToe}
-        query={ViewerQuieries}
+        queries={ViewerQuieries}
       />
       <Route
         path={'/profile'}
         component={Profile}
-        query={ViewerQuieries}
+        queries={ViewerQuieries}
       />
     </Route>
   )
