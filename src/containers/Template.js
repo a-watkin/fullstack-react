@@ -1,56 +1,44 @@
-import React, {Component} from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-import NavDrawer from '../components/NavDrawer'
-import {Header, Main} from '../styled/Template'
+import React, { Component } from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import NavDrawer from "../components/NavDrawer";
+import { Header, Main } from "../styled/Template";
 
-import Relay from 'react-relay'
+import Relay from "react-relay";
 
-injectTapEventPlugin()
+injectTapEventPlugin();
 
 class Template extends Component {
-
   render() {
     return (
       <MuiThemeProvider>
         <div>
+          <NavDrawer auth={this.props.route.auth} />
 
-          <NavDrawer
-            auth={this.props.route.auth}
-          />
+          <Header>TicTacTuring</Header>
 
-          <Header>
-            TicTacTuring
-          </Header>
-          
           {/* 
           
           things in here are styled by styled/template
           which is wrapped by Container styled.div
           */}
-          <Main>
-            
-            {this.props.children}
-          </Main>
+          <Main>{this.props.children}</Main>
         </div>
       </MuiThemeProvider>
-    )
+    );
   }
 }
 
 // export default Template
 
-
-export default Relay.createContainer(
-  Template, {
-    fragments: {
-      viewer: () => Relay.QL`
+export default Relay.createContainer(Template, {
+  fragments: {
+    viewer: () => Relay.QL`
         fragment on Viewer {
           user {
             id
           }
         }
-      `,
-    }
+      `
   }
-)
+});

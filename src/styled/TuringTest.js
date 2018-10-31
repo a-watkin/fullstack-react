@@ -1,7 +1,7 @@
-import React from 'react'
-import {cyan500} from 'material-ui/styles/colors'
-import styled from 'styled-components'
-import RaisedButton from 'material-ui/RaisedButton'
+import React from "react";
+import { cyan500 } from "material-ui/styles/colors";
+import styled from "styled-components";
+import RaisedButton from "material-ui/RaisedButton";
 
 const Container = styled.div`
   left: 0;
@@ -19,12 +19,12 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-`
+`;
 
 const Question = styled.span`
   font-size: 25px;
   display: flex;
-`
+`;
 
 const Answers = styled.div`
   display: flex;
@@ -34,24 +34,28 @@ const Answers = styled.div`
   align-items: center;
   align-content: space-around;
   width: 100%;
-`
+`;
 
-const TuringTest = (props) => {
+const TuringTest = props => {
   return (
     <Container>
       <Question>Was your opponent human or robot?</Question>
       <Answers>
         <RaisedButton
-          label={'Human'}
-          onTouchTap={()=>{props.recordGame('HUMAN')}}
+          label={"Human"}
+          onTouchTap={() => {
+            props.recordGame("HUMAN");
+          }}
         />
         <RaisedButton
-          label={'Robot'}
-          onTouchTap={()=>{props.recordGame('ROBOT')}}
+          label={"Robot"}
+          onTouchTap={() => {
+            props.recordGame("ROBOT");
+          }}
         />
       </Answers>
     </Container>
-  )
-}
+  );
+};
 
-export default TuringTest
+export default TuringTest;

@@ -1,41 +1,43 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Router, browserHistory, applyRouterMiddleware} from 'react-router'
-import Routes from './routes'
-import Relay from 'react-relay'
-import useRelay from 'react-router-relay'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Router, browserHistory, applyRouterMiddleware } from "react-router";
+import Routes from "./routes";
+import Relay from "react-relay";
+import useRelay from "react-router-relay";
 // for changing headers
-import {RelayNetworkLayer, urlMiddleware} from 'react-relay-network-layer'
-import {relayApi} from './config/endpoints'
-import auth from './utils/auth'
-
+import { RelayNetworkLayer, urlMiddleware } from "react-relay-network-layer";
+import { relayApi } from "./config/endpoints";
+import auth from "./utils/auth";
 
 const createHeaders = () => {
-  let idToken = auth.getToken()
+  let idToken = auth.getToken();
   if (idToken) {
     return {
-      'Authorization': `Bearer ${idToken}`
-    }
+      Authorization: `Bearer ${idToken}`
+    };
   } else {
-    return {}
+    return {};
   }
-}
+};
 
 Relay.injectNetworkLayer(
-  new RelayNetworkLayer([
-    urlMiddleware({
-      url: (req) => relayApi,
-    }),
-    next => req => {
-      req.headers = {
-        // modifies headers
-        ...req.headers,
-        ...createHeaders()
+  new RelayNetworkLayer(
+    [
+      urlMiddleware({
+        url: req => relayApi
+      }),
+      next => req => {
+        req.headers = {
+          // modifies headers
+          ...req.headers,
+          ...createHeaders()
+        };
+        return next(req);
       }
-      return next(req)
-    },
-  ],{disableBatchQuery: true})
-)
+    ],
+    { disableBatchQuery: true }
+  )
+);
 
 ReactDOM.render(
   <Router
@@ -44,5 +46,5 @@ ReactDOM.render(
     history={browserHistory}
     routes={Routes}
   />,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
