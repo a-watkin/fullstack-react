@@ -14,4 +14,4 @@ Uses:
 
 I used yarn for dependency managment.
 
-[See this app live on Heroku](https://github.com/a-watkin/fullstack-react.git)
+[See this app live on Heroku](https://tictacturing-awatkin.herokuapp.com/)
